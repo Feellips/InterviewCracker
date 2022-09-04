@@ -25,10 +25,8 @@ namespace InterviewCracker.ViewModels
             get => _correct;
             set
             {
-                if (this.RaiseAndSetIfChanged(ref _correct, value))
-                {
-                    this.RaisePropertyChanged(nameof(CorrectColor));
-                }
+                this.RaiseAndSetIfChanged(ref _correct, value);
+                this.RaisePropertyChanged(nameof(CorrectColor));
             }
         }
 
