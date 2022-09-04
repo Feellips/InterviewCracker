@@ -1,0 +1,52 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="InterviewCracker.Views.AddQuestionWindow"
+        Title="AddQuestionWindow">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<Menu VerticalAlignment="Top" HorizontalAlignment="Left">
+			<MenuItem Header="Add" Command="{Binding AddQuestion}"/>
+		</Menu>
+
+		<TextBox Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding NewQuestion.Text}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+		<Grid Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<Button Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="O(1)" IsCancel="true" Command="{Binding AnswerQuestion}" CommandParameter="0"/>
+			<Button Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="O(logN)" IsCancel="true" Command="{Binding AnswerQuestion}" CommandParameter="1"/>
+			<Button Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="O(N logN)" IsCancel="true" Command="{Binding AnswerQuestion}" CommandParameter="2"/>
+			<Button Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="O(N)" IsCancel="true" Command="{Binding AnswerQuestion}" CommandParameter="3"/>
+		</Grid>
+		<Grid Grid.Row="1" Grid.Column="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<Button Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="O(Nk)" IsCancel="true" Command="{Binding AnswerQuestion}" CommandParameter="4"/>
+			<Button Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="O(N+k)" IsCancel="true" Command="{Binding AnswerQuestion}" CommandParameter="5"/>
+			<Button Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="O(N^2)" IsCancel="true" Command="{Binding AnswerQuestion}" CommandParameter="6"/>
+			<Button Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="N/A" IsCancel="true"  Command="{Binding AnswerQuestion}" CommandParameter="7"/>
+		</Grid>
+	</Grid>
+</Window>
